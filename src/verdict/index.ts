@@ -73,7 +73,7 @@ export function isSupportFontFamily(family: string) {
  * @param val 原始值
  * @returns 当值不是undefined返回true,否则为false
  */
-export function isDefined<T = any>(val?: T) {
+export function isDefined<T = any>(val?: T): val is T {
     return typeof val !== 'undefined'
 }
 
@@ -83,7 +83,7 @@ export function isDefined<T = any>(val?: T) {
  * @param val 原始值
  * @returns 当值是undefine返回true,否则为false
  */
-export function isUndefined(val: any) {
+export function isUndefined(val: any): val is undefined {
     return toString(val) === '[object Undefined]'
 }
 
@@ -93,7 +93,7 @@ export function isUndefined(val: any) {
  * @param val 原始值
  * @returns 当值是boolean返回true,否则为false
  */
-export function isBoolean(val: any) {
+export function isBoolean(val: any): val is boolean {
     return typeof val === 'boolean'
 }
 
@@ -103,7 +103,8 @@ export function isBoolean(val: any) {
  * @param val 原始值
  * @returns 当值是function返回true,否则为false
  */
-export function isFunction(val: any) {
+// eslint-disable-next-line @typescript-eslint/ban-types
+export function isFunction<T extends Function>(val: any): val is T {
     return typeof val === 'function'
 }
 
@@ -113,7 +114,7 @@ export function isFunction(val: any) {
  * @param val 原始值
  * @returns 当值是number返回true,否则为false
  */
-export function isNumber(val: any) {
+export function isNumber(val: any): val is number {
     return typeof val === 'number'
 }
 
@@ -123,7 +124,7 @@ export function isNumber(val: any) {
  * @param val 原始值
  * @returns 当值是string返回true,否则为false
  */
-export function isString(val: any) {
+export function isString(val: any): val is string {
     return typeof val === 'string'
 }
 
@@ -133,7 +134,7 @@ export function isString(val: any) {
  * @param val 原始值
  * @returns 当值是object返回true,否则为false
  */
-export function isObject(val: any) {
+export function isObject(val: any): val is object {
     return toString(val) === '[object Object]'
 }
 
@@ -143,7 +144,7 @@ export function isObject(val: any) {
  * @param val 原始值
  * @returns 当值是null返回true,否则为false
  */
-export function isNull(val: any) {
+export function isNull(val: any): val is null {
     return toString(val) === '[object Null]'
 }
 
@@ -153,7 +154,7 @@ export function isNull(val: any) {
  * @param val 原始值
  * @returns 当值是RegExp返回true,否则为false
  */
-export function isRegExp(val: any) {
+export function isRegExp(val: any): val is RegExp {
     return toString(val) === '[object RegExp]'
 }
 
@@ -163,6 +164,6 @@ export function isRegExp(val: any) {
  * @param val 原始值
  * @returns 当值是Date返回true,否则为false
  */
-export function isDate(val: any) {
+export function isDate(val: any): val is Date {
     return toString(val) === '[object Date]'
 }
