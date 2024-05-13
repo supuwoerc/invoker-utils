@@ -1,4 +1,4 @@
 {
-  "entryPoints": ["./src"],
-  "out": "docs"
+    "entryPoints": ["./src/core/**", "./src/css/**", "./src/tree/**", "./src/vendor/**", "./src/verdict/**"],
+    "out": "docs"
 }

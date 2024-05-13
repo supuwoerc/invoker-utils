@@ -1,5 +1,6 @@
 import { EqualFunc, StorageOptions } from './types'
 
+// export { EqualFunc, StorageOptions }
 /**
  * @description 数据toString
  * @param v 原始数据
