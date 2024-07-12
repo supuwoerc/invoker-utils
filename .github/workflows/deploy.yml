@@ -11,10 +11,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Code
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
 
             - name: setup node and pnpm
-              uses: dafnik/setup-node-pnpm@v1
+              uses: dafnik/setup-node-pnpm@v3
               with:
                   pnpm: 7
                   node: 16
@@ -29,7 +29,7 @@ jobs:
               run: pnpm run doc
 
             - name: Deploy to GitHub Pages
-              uses: JamesIves/github-pages-deploy-action@4.1.0
+              uses: JamesIves/github-pages-deploy-action@v4
               with:
                   branch: gh-pages
                   folder: docs
