@@ -20,7 +20,7 @@
 
 ## 方法文档
 
-点击访问：[方法文档-来自TypeDoc](https://supuwoerc.github.io/supuwoerc-utils/modules.html)
+点击访问：[方法文档-来自TypeDoc](https://supuwoerc.github.io/supuwoerc-utils/index.html)
 ## 示例
 
 ```typescript
