@@ -1,5 +1,12 @@
 
 
+## [1.2.1](https://github.com/supuwoerc/supuwoerc-utils/compare/1.2.0...1.2.1) (2024-07-26)
+
+
+### 📝 Documentation | 文档
+
+* 更新文档 ([ab71574](https://github.com/supuwoerc/supuwoerc-utils/commit/ab71574e0383a0cad58eb5c2df508646ae1b583d))
+
 ## 1.2.0 (2024-07-26)
 
 
