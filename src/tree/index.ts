@@ -1,7 +1,5 @@
 import { Tree, TreeNode, EqualFunc } from './types'
 
-// export { Tree, TreeNode, EqualFunc }
-
 /**
  * @description 将数组组装为树结构
  * @category Tree

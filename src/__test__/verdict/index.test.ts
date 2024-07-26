@@ -1,4 +1,4 @@
-import { MOBILE_UA, PC_UA } from '@/constant'
+import { MOBILE_UA, PC_UA } from '../../constant'
 import {
     isBoolean,
     isDate,
@@ -13,7 +13,7 @@ import {
     isString,
     isSupportFontFamily,
     isUndefined,
-} from '@/index'
+} from '../../verdict'
 
 describe('isSupportFontFamily', () => {
     test('determine whether the browser supports a certain font', () => {

@@ -303,3 +303,27 @@ export class Storage<Mapping extends Record<keyof unknown, unknown>> {
         return JSON.parse(v) as T
     }
 }
+
+/**
+ * 将多个函数从左到右组合成一个函数，每个函数会消费前一个函数的返回值。
+ * @param {...Function[]} 函数列表 - 要组合的函数。
+ * @returns {Function} - 组合后的新函数。
+ * @throws {TypeError} - 如果任意一个参数不是函数，则抛出类型错误。
+ */
+export function flowFunc(...funcs: Function[]) {
+    const { length } = funcs
+    let i = length
+    while (i--) {
+        if (typeof funcs[i] !== 'function') {
+            throw new TypeError('Expected a function')
+        }
+    }
+    return function (this: any, ...args: any[]) {
+        let j = 0
+        let result = length ? funcs[j].apply(this, args) : args[0]
+        while (++j < length) {
+            result = funcs[j].call(this, result)
+        }
+        return result
+    }
+}

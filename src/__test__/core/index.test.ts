@@ -14,7 +14,8 @@ import {
     saveFile,
     ensurePrefix,
     ensureSuffix,
-} from '@/index'
+    flowFunc,
+} from '../../core'
 import { UniqueByTestDomain } from './types'
 
 beforeAll(() => {
@@ -299,5 +300,60 @@ describe('ensureSuffix', () => {
     test('should not modify string when suffix already present', () => {
         expect(ensureSuffix('.com', 'example.com')).toBe('example.com')
         expect(ensureSuffix('def', 'abcdef')).toBe('abcdef')
+    })
+})
+
+describe('flowFunc', () => {
+    it('should correctly compose functions from left to right', () => {
+        const add = (a: number, b: number) => a + b
+        const square = (x: number) => x * x
+        const toString = (x: number) => x.toString()
+
+        const composedFunc = flowFunc(add, square, toString)
+
+        expect(composedFunc(2, 3)).toBe('25')
+    })
+
+    it('should return the initial argument if no functions are provided', () => {
+        const composedFunc = flowFunc()
+
+        expect(composedFunc(42)).toBe(42)
+    })
+
+    it('should throw a TypeError if any argument is not a function', () => {
+        expect(() => flowFunc(() => {}, 'not a function' as any)).toThrow(TypeError)
+    })
+
+    it('should handle a single function correctly', () => {
+        const double = (x: number) => x * 2
+
+        const composedFunc = flowFunc(double)
+
+        expect(composedFunc(5)).toBe(10)
+    })
+
+    it('should correctly handle functions with different types of arguments', () => {
+        const add = (a: number, b: number) => a + b
+        const concat = (x: string, y: string) => x + y
+
+        const composedFunc = flowFunc(add, concat)
+
+        expect(composedFunc(1, 2, 'foo', 'bar')).toBe(NaN)
+    })
+
+    it('should maintain the context of `this`', () => {
+        const obj = {
+            value: 2,
+            double() {
+                return this.value * 2
+            },
+            triple() {
+                return this.value * 3
+            },
+        }
+
+        const composedFunc = flowFunc(obj.double, obj.triple)
+
+        expect(composedFunc.call(obj)).toBe(6)
     })
 })

@@ -1,4 +1,4 @@
-import { array2Tree, getParents, getTargetFromTree, tree2Array } from '@/index'
+import { array2Tree, getParents, getTargetFromTree, tree2Array } from '../../tree'
 
 describe('array2Tree', () => {
     test('should convert flat array to tree structure', () => {

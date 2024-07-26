@@ -38,7 +38,7 @@
         "lint:fix": "eslint --ext .ts src --fix --config=.eslintrc.json",
         "lint-staged": "lint-staged",
         "commitlint": "commitlint --config commitlint.config.cjs -e -V",
-        "publish:public": "npm publish --access public"
+        "release": "release-it"
     },
     "lint-staged": {
         "src/**/*.ts": "npm run lint"
@@ -73,6 +73,7 @@
         "@babel/runtime-corejs3": "^7.24.0",
         "@commitlint/cli": "^17.6.3",
         "@commitlint/config-conventional": "^17.6.3",
+        "@release-it/conventional-changelog": "^8.0.1",
         "@rollup/plugin-alias": "^5.0.0",
         "@rollup/plugin-babel": "^6.0.3",
         "@rollup/plugin-commonjs": "^24.1.0",
@@ -97,6 +98,7 @@
         "jest-environment-jsdom": "^29.5.0",
         "lint-staged": "^13.2.2",
         "prettier": "^2.8.8",
+        "release-it": "^17.6.0",
         "rollup": "^3.21.5",
         "rollup-plugin-cleaner": "^1.0.0",
         "rollup-plugin-dts": "^5.3.0",

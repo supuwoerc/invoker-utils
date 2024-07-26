@@ -15,6 +15,7 @@ const getPlugins = (needCleaner = false) => {
     const plugins = [
         eslint(),
         resolve({
+            browser: true,
             preferBuiltins: true,
         }),
         alias({

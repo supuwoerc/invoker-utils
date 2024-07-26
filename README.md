@@ -1,8 +1,9 @@
 # @supuwoerc/utils
 
- tips：请确保安装版本>=1.1.8，在此之前的版本未为方法添加测试，同时未添加主体方法和类型声明，同时限制了包管理器
+请确保安装版本>=1.1.8，在此之前的版本未为方法添加测试，同时未添加主体方法和类型声明，同时限制了包管理器
 
- 前端开发日常使用的一些方法,持续收集中...
+前端开发日常使用的一些方法,持续收集中...
+
 ## 安装
 
 这个项目使用 [node](http://nodejs.org) 和 [npm](https://npmjs.com)。请确保你本地安装了它们。
@@ -20,7 +21,7 @@
 
 ## 方法文档
 
-点击访问：[方法文档-来自TypeDoc](https://supuwoerc.github.io/supuwoerc-utils/index.html)
+点击访问：[@Doc](https://supuwoerc.github.io/supuwoerc-utils/index.html)
 ## 示例
 
 ```typescript
@@ -39,3 +40,7 @@ console.log(getElementSelector(document.body)) // 'html > body'
 ## 使用许可
 
 [MIT](LICENSE) © Supuwoerc
+
+## CHANGELOG
+
+[CHANGELOG](CHANGELOG.md)  

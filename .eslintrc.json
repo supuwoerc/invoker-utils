@@ -10,7 +10,11 @@
         "import/prefer-default-export": "off",
         "no-console": "error",
         "@typescript-eslint/no-explicit-any": ["off"],
-        "@typescript-eslint/ban-ts-comment": "off"
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/ban-types": "off",
+        "no-cond-assign": "off",
+        "func-names": "off",
+        "no-plusplus": "off"
     },
     "settings": {
         "import/resolver": {

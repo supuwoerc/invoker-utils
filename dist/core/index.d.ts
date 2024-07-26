@@ -129,3 +129,10 @@ export declare class Storage<Mapping extends Record<keyof unknown, unknown>> {
     static stringify(v: unknown): string;
     static parse<T>(v: string): T;
 }
+/**
+ * 将多个函数从左到右组合成一个函数，每个函数会消费前一个函数的返回值。
+ * @param {...Function[]} 函数列表 - 要组合的函数。
+ * @returns {Function} - 组合后的新函数。
+ * @throws {TypeError} - 如果任意一个参数不是函数，则抛出类型错误。
+ */
+export declare function flowFunc(...funcs: Function[]): (this: any, ...args: any[]) => any;
