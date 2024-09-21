@@ -13,6 +13,7 @@ import { fileURLToPath } from 'url'
 
 const getPlugins = (needCleaner = false) => {
     const plugins = [
+        commonjs(),
         eslint(),
         resolve({
             browser: true,
@@ -28,7 +29,6 @@ const getPlugins = (needCleaner = false) => {
         }),
         json(),
         typescript(),
-        commonjs(),
         esbuild(),
         babel({
             exclude: 'node_modules/**',
